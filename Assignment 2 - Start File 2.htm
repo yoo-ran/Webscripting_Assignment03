@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MDIA 2294 Assignment 2</title>
+	
+	<style>
+	    thead{
+	        font-weight:bold;	        	        
+	    }
+	    
+	    td{
+	        padding-left:5px;
+	        padding-right:25px;	        
+	    }
+	    
+	    td.text-right{
+	        text-align:right;	        
+	    }
+	</style>	
+	
+</head>
+<body>
+
+	<h1>MDIA 2294: HB Racers Collectable Quotes</h1>
+	
+	<table>
+	    <thead>
+	        <tr>
+	            <td>PROD NO</td>
+	            <td>MODEL NAME</td>
+	            <td>BASE PRICE</td>
+	            <td>ESTIMATE</td>	            
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	            <td>00-MM</td>
+	            <td>The Mean Machine</td>
+	            <td><input id="item-1-input" type="text" size="10" value="24.50" readonly /></td>
+	            <td class="text-right"><span id="item-1-result"></span></td>	            
+	        </tr>
+	        <tr>
+	            <td>02-CC</td>
+	            <td>The Creepy Coupe</td>
+	            <td><input id="item-2-input" type="text" size="10" value="35.00" readonly /></td>
+	            <td class="text-right"><span id="item-2-result"></span></td>	            
+	        </tr>
+	        <tr>
+	            <td>01-BM</td>
+	            <td>The Boulder Mobile</td>
+	            <td><input id="item-3-input" type="text" size="10" value="19.75" readonly /></td>
+	            <td class="text-right"><span id="item-3-result"></span></td>	            
+	        </tr>
+	        <tr>
+	            <td>03-CAC</td>
+	            <td>The Convert-A-Car</td>
+	            <td><input id="item-4-input" type="text" size="10" value="40.75" readonly /></td>
+	            <td class="text-right"><span id="item-4-result"></span></td>	            
+	        </tr>
+	        <tr>
+	            <td>09-TT</td>
+	            <td>The Turbo Terrific</td>
+	            <td><input id="item-5-input" type="text" size="10" value="29.50" readonly /></td>
+	            <td class="text-right"><span id="item-5-result"></span></td>	            
+	        </tr>
+	    </tbody>		       
+	</table>
+	
+	<h2>Options</h2>
+	
+	<table>
+	    <tbody>
+	        <tr>
+	            <td class="text-right">Shipping Method:</td>
+	            <td>
+	                <select id="shipping">
+                        <option value="">Select One</option>
+                        <option value="REG">Regular ($5.50)</option>
+                        <option value="EXP">Express ($15.75)</option>
+                        <option value="OVER">Overnight ($29.95)</option>            
+                    </select>	
+                    <!-- shipping message into the following span -->
+                    <span id="shipping-warning" style="color:red;"></span>
+	            </td>	            	            
+	        </tr>
+	        <tr>
+	            <td class="text-right">Outside Costs:</td>
+	            <td>
+                    <input id="outside-costs" type="text" size="17" value="0" />
+                    <!-- outside costs message into the following span -->
+                    <span id="outside-warning" style="color:red;"></span>    
+                </td>	        
+	        </tr>
+	        <tr>
+	            <td class="text-right">Include Certificate:</td>
+	            <td><input id="certificate" type="checkbox" /> @ $2.75</td>	            	            
+	        </tr>
+	        <tr>
+	            <td class="text-right">Original Package:</td>
+	            <td><input id="original-package" type="checkbox" /> @ $9.95</td>	            	            
+	        </tr>	        
+	        <tr>
+	            <td class="text-right">Taxable:</td>
+	            <td><input id="taxable" type="checkbox" /> @ 12%</td>	            	            
+	        </tr>
+	        
+	        <tr>
+	            <td></td>
+	            <td>
+	                <button id="estimate">Estimate</button>
+	            </td>	            	            
+	        </tr>
+	        
+	    </tbody>	
+	</table>
+	
+
+</body>
+</html>
