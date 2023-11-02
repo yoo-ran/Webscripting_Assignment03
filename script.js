@@ -1,3 +1,5 @@
+// Create variable for the estimate button
+// At the bottom, I will use it for click eventlistener
 const estimateBtn = document.querySelector("#estimate");
 
 
