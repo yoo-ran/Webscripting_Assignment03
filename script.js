@@ -2,13 +2,21 @@
 // At the bottom, I will use it for click eventlistener
 const estimateBtn = document.querySelector("#estimate");
 
-
+// When user clicks "estimate" button, this function will run
+// Basically, this function is for running calculation
 const estimate = () => {
+    // Create array for input of each item, so I can reach to the price each item
+    // then the price will go to function calculate()
+    // I need price array to reach each price and to calculate it
     let priceArr = document.querySelectorAll(".itemPrice")
+    // Create span tag array, so I can put the result of calculation into span tag
     let resultArr = document.querySelectorAll(".result")
 
-
+    // using for loop, I am putting price and span tag each into funtion calculate()
+    // why I use for loop is I need to reach each element of priceArr and resultArr using index
+    // i will start from 0 until before the length of priceArr, and i is incremented
     for (let i = 0; i < priceArr.length; i++) {
+        // 
         resultArr[i].innerHTML =""
         calculate(Number(priceArr[i].value),resultArr[i])
     }
