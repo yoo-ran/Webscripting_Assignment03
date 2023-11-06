@@ -121,18 +121,18 @@ const calculate = (price,result)=> {
         // when the outsideCost is invalid, warning message will appear next to outsideCost input
         }else {
             // I already created variable for span tag called outsideCost_error
-            // and I put message "Outside Costs is invalidate" into the span tag using .innerHTML
-            outsideCost_error.innerHTML = "Outside Costs is invalidate";
+            // and I put message "Please, select enter a number only" into the span tag using .innerHTML
+            outsideCost_error.innerHTML = "Please, select enter a number only";
         }
     // when the shipping selection is invalid, warning message will appear next to shipping select input
     }else{
         // I already created variable for span tag called shipping_error
-        // and I put message "Shipping is not selected"" into the span tag using .innerHTML
-        shipping_error.innerHTML = "Shipping is not selected";
+        // and I put message "Please, select one" into the span tag using .innerHTML
+        shipping_error.innerHTML = "Please, select one";
 
         // This is for the case that shipping is invalid and also outsideCost is also invalid using  !(“not” operator)
         if(!(outsideCost>=0 && outsideCost<=50)){
-            outsideCost_error.innerHTML = "Outside Costs is invalidate"
+            outsideCost_error.innerHTML = "Please, select enter a number only"
         }
     }
 }
