@@ -69,7 +69,12 @@ const calculate = (price,result)=> {
         // when shipping is validated, we need to check outsideCost as well
         // if outsideCost that user typed is more than and eqaul to 0 and less than and eqaul to 50, if statement will run 
         if(outsideCost>=0 && outsideCost<=50){
+            // when outsideCost is validated, now we need to check the value of shipping option
+            // using switch statement, we can check different value easily and shorter tan if statement
+            // so we will check the value of shipping
             switch (shipping) {
+                // if the value is "REG" (when user clicked Regular shipping), $5.50 will be added to the price of item
+                // the price is from function estimate() which is the price of each item 
                 case "REG":
                     price += 5.50;
                     break;
@@ -82,35 +87,56 @@ const calculate = (price,result)=> {
                     price += 29.95;
                     break;
             }
+
+            // then the outside cost that user typed will be added to the price
+            // the price will get accumulated using += ( addition assignment opearator)
             price += outsideCost;
     
+            // The checkbox called certificate  should be checked
+            // if user checked the certificate checkbox, it will return true
+            // then true statement will run which is addition $2.75 to the price
             if(certificate){
                 price += 2.75;
             }
         
+            // same as how certificate validation works
             if(originalPackage){
                 price+= 9.95;
             }
     
+            // same as how certificate validation works
+            // However, in this case, multiplication assignment will be used,
+            // because all the price should calcurate first, then the calculated price must be multiplied by 1.15
             if(tax){
                 price *= 1.12
             }
 
+            // We've finished calculation and got result price
+            // It's time to put the result into span tag using .innerHTML
+            // variable result is from function estimate();
+            // price will have long decimal places, so to make it shorter, I used .toFixed(2) which will indicate up to two decimal places
+            // and using double quotation and concatenation(+), I add $
             result.innerHTML = "$" + price.toFixed(2);
-    
+
+        // when the outsideCost is invalid, warning message will appear next to outsideCost input
         }else {
-            outsideCost_error.innerHTML = "Outside Costs is invalidate"
+            // I already created variable for span tag called outsideCost_error
+            // and I put message "Outside Costs is invalidate" into the span tag using .innerHTML
+            outsideCost_error.innerHTML = "Outside Costs is invalidate";
         }
+    // when the shipping selection is invalid, warning message will appear next to shipping select input
     }else{
-        shipping_error.innerHTML = "Shipping is not selected"
+        // I already created variable for span tag called shipping_error
+        // and I put message "Shipping is not selected"" into the span tag using .innerHTML
+        shipping_error.innerHTML = "Shipping is not selected";
+
+        // This is for the case that shipping is invalid and also outsideCost is also invalid using  !(“not” operator)
         if(!(outsideCost>=0 && outsideCost<=50)){
             outsideCost_error.innerHTML = "Outside Costs is invalidate"
         }
     }
-
-
-
 }
 
 
+// Finally, when user clicked "estimate" button, function estimate() will run and all the calculation will work
 estimateBtn.addEventListener("click",estimate);
