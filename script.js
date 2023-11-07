@@ -125,6 +125,7 @@ const calculate = (price,result)=> {
             outsideCost_error.innerHTML = "Please, select enter a number only";
         }
     // when the shipping selection is invalid, warning message will appear next to shipping select input
+    // 
     }else{
         // I already created variable for span tag called shipping_error
         // and I put message "Please, select one" into the span tag using .innerHTML
